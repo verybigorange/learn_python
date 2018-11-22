@@ -14,7 +14,7 @@ def create_app():
     return app
 
 def register_bluepint(app):
-    from app.web.userLogin import login
+    from app.web import web
 
     # 在app中注册蓝图
-    app.register_blueprint(login)
+    app.register_blueprint(web)
