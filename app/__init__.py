@@ -9,7 +9,7 @@ def create_app():
     app.secret_key = os.urandom(16)
 
     # 设置静态资源路径
-    app.static_folder = "../static/"
+    app.static_folder = os.path.abspath('static')
 
     # 注册蓝图
     register_bluepint(app)
