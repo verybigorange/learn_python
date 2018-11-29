@@ -4,13 +4,13 @@ from . import  web
 
 @web.route('/login/',methods = ['GET','POST'])
 def hi():
-    return 'hello world'
+    return render_template('hello.html',name = 'python')
 
-# @login.route("/<page>")
-# def show(page):
+# @web.route('/<page>')
+# def show(page = None):
 #     try:
 #         return render_template(('templates/base/{}.html').format(page))
 #     except TemplateNotFound:
 #         abort(404)
-#
-# show('login')
+
+# show('/login')
