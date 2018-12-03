@@ -1,4 +1,6 @@
-from flask import session,render_template
-from . import  web,showPage
+from . import web
+from flask import render_template,session,redirect
 
-showPage('/login')
+@web.route('/login/')
+def login():
+    return render_template('login.html')
