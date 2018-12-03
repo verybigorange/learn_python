@@ -14,7 +14,7 @@
     <input id="password" type="password">
     <button id="submit">提交</button>
 
-    <script src="/static/js/jquery.js"></script>
+    <script src="/static/lib/jquery.js"></script>
     <script>
         $(function(){
             $('#submit').on('click',function(){
@@ -22,7 +22,13 @@
                 let password = $('#password').val();
 
                 $.post('/api/login',{username:username,password:password},function(res){
-                    console.log(res)
+                    if(res.code === 200){
+                        window.location.href = '/'
+                    }else{
+                        if(res.msg){
+                            alert(res.msg)
+                        }
+                    }
                 })
             })
 
